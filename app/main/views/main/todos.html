@@ -10,4 +10,21 @@
      </div>
    </form>
 
-   
+  <table class="todo-table">
+    {{ page._todos.each do |todo| }}
+      <tr>
+        <td><input type="checkbox" checked="{{ todo._completed }}" /></td>
+        <td class="{{ if todo._completed }}complete {{ end }}">
+          {{ todo._name }}
+        </td>
+        <td>
+          <button e-click="todo.destroy">X</button>
+        </td>
+      </tr>
+    {{ end }}
+  </table>
+  <div class="col-md-8">
+    {{ if current_todo }}
+    <h2></h2>
+    <textarea></textarea>
+  </div>
