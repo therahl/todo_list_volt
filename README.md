@@ -1,4 +1,4 @@
-# Place your app's docs here.
+# A Simple Todo List
 
-## New to Volt?
+## Built with Volt Ruby Framework
 Be sure to read the volt docs at http://docs.voltframework.com
