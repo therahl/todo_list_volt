@@ -25,6 +25,8 @@
   </table>
   <div class="col-md-8">
     {{ if current_todo }}
-    <h2></h2>
-    <textarea></textarea>
+
+    <h2>{{ current_todo._name }}</h2>
+    <textarea>{{ current_todo._description }}</textarea>
+    {{ end }}
   </div>

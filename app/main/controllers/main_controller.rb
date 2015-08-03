@@ -14,6 +14,10 @@ module Main
       page._new_todo = ''
     end
 
+    def current_todo
+      
+    end
+
     private
 
     # The main template contains a #template binding that shows another
