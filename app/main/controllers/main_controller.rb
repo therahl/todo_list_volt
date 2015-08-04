@@ -15,7 +15,7 @@ module Main
     end
 
     def current_todo
-      
+      current_todo._description << {{}}
     end
 
     private
