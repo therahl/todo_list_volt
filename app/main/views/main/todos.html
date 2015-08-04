@@ -6,13 +6,13 @@
   <form e-submit="add_todo" role="form">
      <div class="form-group">
        <label>Todo</label>
-       <input class="form-control" type="text" value="{{ page._new_todo }}" />
+       <input class="form-control" type="text" value="{{ _new_todo }}" />
      </div>
    </form>
 
   <table class="todo-table">
-    {{ page._todos.each do |todo| }}
-      <tr>
+    {{ _todos.each_with_index do |todo, index| }}
+      <tr e-click="params._index = index" class="{{ if (params._index || 0).to_i == index }}selected{{ end }}">
         <td><input type="checkbox" checked="{{ todo._completed }}" /></td>
         <td class="{{ if todo._completed }}complete {{ end }}">
           {{ todo._name }}
@@ -25,8 +25,7 @@
   </table>
   <div class="col-md-8">
     {{ if current_todo }}
-
-    <h2>{{ current_todo._name }}</h2>
-    <textarea>{{ current_todo._description }}</textarea>
+      <h2>{{ current_todo._name }}</h2>
+      <textarea>{{ current_todo._description }}</textarea>
     {{ end }}
   </div>
